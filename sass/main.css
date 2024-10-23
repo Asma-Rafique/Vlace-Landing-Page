@@ -90,7 +90,6 @@ p {
   justify-content: space-between;
   flex-direction: row;
   gap: 10px;
-  flex: 1;
 }
 
 .content1 {
