@@ -2,11 +2,31 @@ img {
   max-width: 100%;
 }
 
+h4 {
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+}
+
+h1 {
+  font-family: Manrope;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #2C4C25;
+}
+
 p {
   margin: 0px;
 }
 
 .navbar {
+  max-width: 100%;
+  margin: 0rem;
   display: flex;
   flex-shrink: 1;
   justify-content: space-between;
@@ -31,14 +51,14 @@ p {
 }
 
 .login {
-  width: auto;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 44px;
-  padding-left: 1rem;
-  padding-right: 1rem;
   border-radius: 32px;
   color: white;
   font-family: Manrope;
   background: black;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
 .nav {
@@ -47,10 +67,10 @@ p {
   justify-content: unset;
   flex-direction: row;
   gap: 12px;
-  padding-top: 12px;
+  align-items: center;
 }
 
-.navLogin {
+.navbtn {
   padding-left: 12px;
   border-radius: 32px;
   align-items: center;
@@ -63,9 +83,15 @@ p {
 }
 
 .heroSection {
+  max-width: 100%;
+  margin: 0rem;
   display: flex;
   padding: 72px 80px 0px 80px;
   background: var(--Accent-50, #EBFAE7);
+}
+
+.heroSection > * {
+  flex: 1;
 }
 
 .heroSectionContent {
@@ -132,27 +158,36 @@ p {
 .heroSectionContentSearch input {
   padding: 5px;
 }
+.heroSectionContentSearch > *, .heroSectionContentSearch input > * {
+  flex-shrink: 1;
+}
+.heroSectionContentSearch > :last-child, .heroSectionContentSearch input > :last-child {
+  align-self: flex-end;
+}
 
 .heroSearch {
-  width: auto;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 44px;
-  padding-left: 1rem;
-  padding-right: 1rem;
   border-radius: 32px;
   color: black;
   font-family: Manrope;
   background: #85E36E;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
 .aboutSection {
+  max-width: 100%;
+  margin: 4rem;
   display: flex;
   flex-shrink: 1;
   justify-content: center;
   flex-direction: row;
-  gap: 30px;
-  padding: 50px;
-  gap: 30px;
+  gap: 1rem;
   background: #FFFFFF;
+}
+.aboutSection > * {
+  flex: 1;
 }
 
 .aboutSectionContent {
@@ -164,11 +199,13 @@ p {
 }
 
 .workProcess {
+  max-width: 100%;
+  margin: 0rem;
   display: flex;
   flex-shrink: 1;
   justify-content: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 4rem;
   padding: 50px;
   align-items: center;
   background: var(--Primary-50, #EBFAE7);
@@ -178,7 +215,7 @@ p {
   flex-shrink: 1;
   justify-content: center;
   flex-direction: row;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .process1 {
@@ -215,8 +252,6 @@ p {
 }
 
 .panelHead {
-  width: auto;
-  height: 50px;
   padding: 20px;
   border-radius: 20px;
   background: #85E36E;
@@ -256,7 +291,9 @@ p {
   flex-shrink: 1;
   justify-content: center;
   flex-direction: column;
-  gap: 0px;
+  gap: 2rem;
+  max-width: 100%;
+  margin: 5rem 10rem 5rem 10rem;
   padding: 50px;
   align-items: center;
 }
@@ -280,7 +317,7 @@ p {
   flex-shrink: 1;
   justify-content: center;
   flex-direction: column;
-  gap: 0px;
+  gap: 2rem;
   background: #EBFAE7;
   text-align: center;
   padding: 50px;
@@ -296,6 +333,7 @@ p {
 }
 
 .testinomiallist {
+  padding: 2rem;
   display: flex;
   flex-shrink: 1;
   justify-content: unset;
@@ -320,6 +358,8 @@ p {
 }
 
 .testinomialSection_2 {
+  max-width: 100%;
+  margin: 2rem 4rem 2rem 4rem;
   display: flex;
   flex-shrink: 1;
   justify-content: center;
@@ -327,7 +367,6 @@ p {
   gap: 0px;
   background: white;
   align-items: center;
-  padding: 70px;
 }
 
 .testinomial2box {
