@@ -1,0 +1,304 @@
+// Variables
+$bg: #FFFFFF;
+$primary-50: #EBFAE7;
+$primary-200: #C2F1B6;
+$primary-500: #85E36E;
+$primary-800: #2C4C25;
+$text-grey1-n500: #64748B;
+$neutral-50: #F9FAFB;
+$border-n300: #CBD5E1;
+
+
+// Mixins (Reusable)
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+@mixin btn_style($color,$background){
+    width: auto;
+    height: 44px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 32px;
+    color: $color;
+    font-family: Manrope;
+    background: $background;  
+}
+img{
+    max-width: 100%;
+}
+@mixin flex-center($direction,$justify,$gap) {
+  display: flex;
+  flex-shrink: 1;
+  justify-content: $justify;
+  flex-direction: $direction ;
+  gap: $gap;
+}
+@mixin font-style($font_family,$font_size,$font_weight,$line_height,$text_align,$color){
+    font-family:$font_family ;
+    font-size: $font_size;
+    font-weight: $font_weight;
+    line-height: $line_height ;
+    text-align: $text_align ;
+    color: $color;
+}
+p{
+    margin: 0px
+}
+.navbar{
+    @include flex-center(row, space-between,50px );
+    top: -1px;
+    padding: 12px 80px 12px 80px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CBD5E1
+}
+.navLinks{
+    @include flex-center(row,unset,12px ) ;
+    a{ text-decoration:none;
+        color: black;
+    }
+}
+.login{
+    @include btn_style (white,black)
+}
+
+.nav{
+    @include flex-center(row,unset ,12px );
+    padding-top: 12px;
+}
+
+.navLogin{
+    padding-left: 12px;
+    border-radius: 32px;
+    align-items: center;
+    background: var(--Primary-50, #EBFAE7);
+    @include flex-center(row,flex-end,35px );
+}
+.heroSection {
+    display: flex;
+    padding: 72px 80px 0px 80px;
+    background: var(--Accent-50, #EBFAE7); 
+}
+// .heroSection > *{
+//     flex:1;
+// }
+.heroSectionContent{
+    @include flex-center(column,unset ,40px );
+}
+.heroSectionContentLine{
+    @include flex-center(column,space-around ,12px  )
+}
+.heroSectionContentSearch{
+    @include flex-center(row,space-between ,10px );
+    flex: 1;
+}
+.content1{
+    font-family: Manrope;
+    color:$primary-800;
+    text-align: center;
+    padding: 8px 16px 8px 16px;
+    border-radius: 99px;
+    width: fit-content;
+    background: $primary-200;
+}
+.content2{
+    @include font-style(Manrope, 64px, 700,77px ,left , black);
+}
+.content3{
+    @include font-style(Manrope, 1rem, 400, 20px ,left ,$text-grey1-n500);
+}
+.heroSectionContentSearch{
+    display: flex;
+    padding: 12px 16px 12px 16px;
+    border-radius: 10px;
+    border: 1px solid $border-n300;
+    box-shadow: 0px 2px 5px 0px #00000014;
+    background: white;
+    input{
+        @extend .heroSectionContentSearch;
+        padding: 5px;
+    }
+    
+}
+.heroSearch{
+    @include btn_style(black,$primary-500 );
+}
+.aboutSection{
+    @include flex-center(row,center ,30px );
+    padding: 50px;
+    gap: 30px;
+    background: #FFFFFF;
+}
+.aboutSectionContent{
+    @include flex-center(column,center ,0px )
+}
+.workProcess{
+    @include flex-center(column,center ,30px );
+    padding: 50px;
+    align-items: center;
+    background: var(--Primary-50, #EBFAE7);
+    .processContent{
+        @include flex-center(row,center ,30px );
+    }
+}
+
+.process1{
+    @include flex-center(column,center ,0px );
+    align-items: center;
+}
+
+.purchasing{
+    @include flex-center(column,center ,30px );
+    padding: 50px;
+    background: var(--Primary-500, #85E36E);
+    align-items: center;
+
+}
+.panel{
+    @include flex-center(row,center ,200px );
+    padding: 56px 48px 56px 48px;
+    border-radius: 40px;
+    .panel > * {
+        flex: 1;
+    }
+}
+
+.panelHead{
+    width: auto;
+    height: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    background: $primary-500;
+    @include font-style(Manrope,32px ,800 ,38px ,center ,white )
+
+}
+.panellist{
+    @include flex-center(column,center ,56px );
+    background: white;
+    padding: 40px;
+    border-radius: 40px;
+
+}
+
+.listItems {
+    @include flex-center(column,center , 0px);
+    align-items: center;
+    .listItems > *{
+        flex: 1;
+    }
+}
+
+.faqs{
+    @include flex-center(column,center ,0px );
+    padding: 50px;
+    align-items: center;
+}
+.questionlist{
+    @include flex-center(column,unset ,8px );
+}
+.question{
+    padding: 24px 32px 24px 32px;
+    border-radius: 12px;
+    background: $neutral-50
+}
+.testinomialSection{
+    @include flex-center(column,center ,0px );
+    background: $primary-50;
+    text-align: center;
+    padding: 50px;
+    align-items: center;                                 
+}
+.user{
+    @include flex-center(row,flex-start ,20px );
+}
+.testinomiallist{
+    @include flex-center(row,unset ,50px );
+}
+.testinomiallist > * {
+    flex: 1;
+
+}
+.testinomial{
+    @include flex-center(column,space-between ,0px );
+    background: #FFFFFF;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px;
+}
+.testinomialSection_2{
+    @include flex-center(column,center ,0px );
+    background: white;
+    align-items: center;
+    padding: 70px;
+}
+.testinomial2box{
+    @include flex-center(row,unset ,50px );
+    background: $primary-500;
+    border-radius: 20px;
+}
+.testinomiallistContent{
+    @include flex-center(column,center ,0px );
+    padding-left:30px ;
+    color: $primary-800;
+}
+.image{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius:20px ;
+}
+.footer{
+    @include flex-center(column,unset ,0px );
+    padding-left: 30px;
+    padding-right: 30px;
+    background: $primary-50;
+
+}
+.footerContent{
+    @include flex-center(row,space-between ,0px );
+    align-items: center;
+    padding: 20px;
+}
+.footerLine{
+    @include flex-center(row,space-between ,0px );
+    padding: 10px;
+    border-top: 2px solid #CBD5E1;
+}
+.footer a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+@media (max-width: 768px) {
+    .content2{
+        @include font-style(Manrope, 44px, 400,47px ,left , black);
+    }
+    .panel{
+        @include flex-center(column,center ,10px )
+    }
+    .heroSectionContent {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+
+    .navLinks {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav{
+    flex-direction: column;    
+    .nav a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+}
+.navbar{
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.navLogin{
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+}
