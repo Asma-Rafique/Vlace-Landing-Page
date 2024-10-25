@@ -51,11 +51,6 @@ p, h1, h2, h3, h4 {
   padding: 0rem 1rem 0rem 1rem;
 }
 
-.img-setting {
-  overflow: hidden;
-  max-width: 37.7;
-}
-
 .nav {
   display: flex;
   flex-shrink: 1;
@@ -83,7 +78,7 @@ p, h1, h2, h3, h4 {
 
 .heroSection {
   display: flex;
-  padding: 72px 0px 0px 0px;
+  padding: 72px 0px 0px 72px;
   background: var(--Accent-50, #EBFAE7);
 }
 .heroSection img {
@@ -245,6 +240,7 @@ p, h1, h2, h3, h4 {
   justify-content: flex-start;
   flex-direction: column;
   gap: 26px;
+  flex: 1;
 }
 .articalItem img {
   max-width: 80px;

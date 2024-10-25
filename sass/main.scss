@@ -82,9 +82,7 @@ p,h1,h2,h3,h4{
 .login{
     @include btn_style (white,black)
 }
-.img-setting{
-    @include img-setting(37.7)
-}
+
 .nav{
     @include flex-center(row,unset ,12px );
     align-items: center;
@@ -105,7 +103,7 @@ p,h1,h2,h3,h4{
 
 .heroSection {
     display: flex;
-    padding: 72px 0px 0px 0px;
+    padding: 72px 0px 0px 72px;
     background: var(--Accent-50, #EBFAE7); 
 img{
     @include img-setting(728px)
@@ -209,6 +207,7 @@ img{
 
 .articalItem{
     @include flex-center(column,flex-start ,26px );
+    flex: 1;
     img{
         max-width: 80px;
     }
