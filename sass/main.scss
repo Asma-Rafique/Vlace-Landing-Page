@@ -114,7 +114,7 @@ img{
     flex:1;
 }
 .heroSectionContent{
-    @include flex-center(column,unset ,40px );
+    @include flex-center(column,center ,40px );
 }
 .heroSectionContentLine{
     @include flex-center(column,space-around ,12px  )
