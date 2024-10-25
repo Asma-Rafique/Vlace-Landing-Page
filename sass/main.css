@@ -1,35 +1,12 @@
+:root {
+  font-family: "Manrope", sans-serif;
+}
+
 img {
   max-width: 100%;
 }
 
-h4 {
-  font-family: Manrope;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 20px;
-  text-align: center;
-  color: black;
-}
-
-h1 {
-  font-family: Manrope;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: left;
-  color: #2C4C25;
-}
-
-h2 {
-  font-family: Manrope;
-  font-size: 1.7rem;
-  font-weight: 700;
-  line-height: 27px;
-  text-align: left;
-  color: #2C4C25;
-}
-
-p {
+p, h1, h2, h3, h4 {
   margin: 0px;
 }
 
@@ -66,11 +43,17 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
+  font-size: 18px;
   border-radius: 32px;
   color: white;
-  font-family: Manrope;
+  border: none;
   background: black;
   padding: 0rem 1rem 0rem 1rem;
+}
+
+.img-setting {
+  overflow: hidden;
+  max-width: 37.7;
 }
 
 .nav {
@@ -103,6 +86,10 @@ p {
   padding: 72px 0px 0px 0px;
   background: var(--Accent-50, #EBFAE7);
 }
+.heroSection img {
+  overflow: hidden;
+  max-width: 728px;
+}
 
 .heroSection > * {
   flex: 1;
@@ -132,28 +119,35 @@ p {
   gap: 10px;
 }
 
-.content1 {
-  font-family: Manrope;
-  color: #2C4C25;
+.startHeading {
+  color: #427137;
   text-align: center;
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px;
   border-radius: 99px;
   width: -moz-fit-content;
   width: fit-content;
   background: #C2F1B6;
 }
 
-.content2, h1 {
-  font-family: Manrope;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 77px;
-  text-align: left;
+.mainHeading {
+  font-size: 34px;
   color: black;
 }
 
+.detailedText, .testinomial p, .panelListItems p, .panelHeading > *, .articalItem p {
+  font-size: 16px;
+  color: #64748B;
+  text-align: left;
+}
+
+.detailedText2 {
+  font-size: 16px;
+  color: #334155;
+  text-align: left;
+}
+
 .content3 {
-  font-family: Manrope;
+  font-family: "Manrope", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 20px;
@@ -171,21 +165,20 @@ p {
 }
 .heroSectionContentSearch input {
   padding: 5px;
+  flex-basis: 75%;
 }
-.heroSectionContentSearch > *, .heroSectionContentSearch input > * {
-  flex-shrink: 1;
-}
-.heroSectionContentSearch > :last-child, .heroSectionContentSearch input > :last-child {
-  align-self: flex-end;
+.heroSectionContentSearch button {
+  flex-basis: 20%;
 }
 
 .heroSearch {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
+  font-size: 18px;
   border-radius: 32px;
   color: black;
-  font-family: Manrope;
+  border: none;
   background: #85E36E;
   padding: 0rem 1rem 0rem 1rem;
 }
@@ -210,6 +203,10 @@ p {
 }
 .aboutSection > :last-child {
   text-align: left;
+}
+.aboutSection img {
+  overflow: hidden;
+  max-width: 516px;
 }
 
 .aboutSectionContent {
@@ -242,13 +239,22 @@ p {
   padding: 56px 48px;
 }
 
-.process1 {
+.articalItem {
   display: flex;
   flex-shrink: 1;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 0px;
-  align-items: center;
+  gap: 26px;
+}
+.articalItem img {
+  max-width: 80px;
+}
+.articalItem h3 {
+  font-size: 24px;
+  color: #020617;
+}
+.articalItem p {
+  color: #334155;
 }
 
 .Section_4 {
@@ -261,7 +267,7 @@ p {
   justify-content: unset;
   flex-direction: column;
   gap: 30px;
-  padding: 88px 80px;
+  padding: 88px 0px;
   align-items: center;
 }
 .purchasing .purchasingHead {
@@ -271,6 +277,10 @@ p {
   flex-direction: row;
   gap: 30px;
 }
+.purchasing img {
+  overflow: hidden;
+  max-width: 82px;
+}
 
 .panel {
   display: flex;
@@ -278,26 +288,36 @@ p {
   justify-content: space-between;
   flex-direction: row;
   gap: 150px;
-  padding: 8px 80px;
   border-radius: 40px;
 }
 .panel .panel > * {
   flex: 1;
 }
 
+.panelHeading {
+  display: flex;
+  flex-shrink: 1;
+  justify-content: unset;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.panelHeading > * {
+  text-align: center;
+}
+
 .panelHead {
   padding: 20px;
   border-radius: 20px;
-  background: #85E36E;
-  font-family: Manrope;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 38px;
+  background: #6FBD5C;
   text-align: center;
+}
+.panelHead h3 {
+  font-size: 32px;
   color: white;
 }
 
-.panellist {
+.panelList {
   display: flex;
   flex-shrink: 1;
   justify-content: center;
@@ -305,26 +325,30 @@ p {
   gap: 56px;
   background: white;
   align-items: center;
-  padding: 56px 48px;
+  padding: 48px 56px;
   border-radius: 40px;
 }
 
-.listItems {
+.panelListItems {
   display: flex;
   flex-shrink: 1;
   justify-content: center;
   flex-direction: column;
-  gap: 0px;
+  gap: 16px;
   align-items: center;
 }
-.listItems .listItems > * {
+.panelListItems .panelListItems > * {
   flex: 1;
 }
-.listItems p {
+.panelListItems p {
   text-align: center;
 }
 
-.faqs {
+h4 {
+  font-size: 22px;
+}
+
+.faqSection {
   display: flex;
   flex-shrink: 1;
   justify-content: center;
@@ -336,7 +360,7 @@ p {
   align-items: center;
 }
 
-.questionlist {
+.questionList {
   display: flex;
   flex-shrink: 1;
   justify-content: unset;
@@ -345,10 +369,21 @@ p {
   padding: 0px 100px;
 }
 
-.question {
+.questionListArticle {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
   padding: 24px 32px 24px 32px;
-  border-radius: 12px;
   background: #F9FAFB;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+}
+.question img {
+  max-width: 31px;
 }
 
 .Section_6 {
@@ -361,7 +396,7 @@ p {
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  padding: 88px 80px;
+  padding: 88px 0px;
   background: #EBFAE7;
   text-align: center;
   align-items: center;
@@ -373,9 +408,10 @@ p {
   justify-content: flex-start;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 }
 
-.testinomiallist {
+.testinomialList {
   padding: 2rem;
   display: flex;
   flex-shrink: 1;
@@ -384,23 +420,27 @@ p {
   gap: 50px;
 }
 
-.testinomiallist > * {
+.testinomialList > * {
   flex: 1;
 }
 
 .testinomial {
   display: flex;
   flex-shrink: 1;
-  justify-content: space-between;
+  justify-content: unset;
   flex-direction: column;
-  gap: 0px;
+  gap: 16px;
   background: #FFFFFF;
+  text-align: left;
   padding: 24px;
   border-radius: 20px;
   border: 1px;
 }
+.testinomial h4 {
+  font-size: 20px;
+}
 
-.testinomialSection_2 {
+.testinomialSection2 {
   display: flex;
   flex-shrink: 1;
   justify-content: center;
@@ -411,7 +451,7 @@ p {
   align-items: center;
 }
 
-.testinomial2box {
+.testinomial2Box {
   display: flex;
   flex-shrink: 1;
   justify-content: unset;
@@ -420,16 +460,35 @@ p {
   background: #85E36E;
   border-radius: 20px;
 }
+.testinomial2Box img {
+  overflow: hidden;
+  max-width: 463px;
+}
 
-.testinomiallistContent {
+.testinomialListContent {
   display: flex;
   flex-shrink: 1;
   justify-content: center;
   flex-direction: column;
-  gap: 0px;
+  gap: 20px;
   padding-left: 30px;
   color: #2C4C25;
   width: 55%;
+}
+.testinomialListContent h2 {
+  font-size: 40px;
+}
+
+.testinomialListContentBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 44px;
+  font-size: 18px;
+  border-radius: 32px;
+  color: white;
+  border: none;
+  background: black;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
 .image {
@@ -481,8 +540,8 @@ p {
 }
 
 @media (max-width: 768px) {
-  .content2, h1 {
-    font-family: Manrope;
+  .content2 {
+    font-family: "Manrope", sans-serif;
     font-size: 44px;
     font-weight: 400;
     line-height: 47px;

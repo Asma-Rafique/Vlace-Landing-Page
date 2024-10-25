@@ -1,26 +1,34 @@
+
 // Variables
 $bg: #FFFFFF;
 $primary-50: #EBFAE7;
 $primary-200: #C2F1B6;
 $primary-500: #85E36E;
+$primary-600: #427137;
+$primary-700:#6FBD5C;
 $primary-800: #2C4C25;
 $text-grey1-n500: #64748B;
+$text-grey1-n600 :#334155;
+$text-grey1-n700: #020617;
 $neutral-50: #F9FAFB;
 $border-n300: #CBD5E1;
+$font_family: "Manrope", sans-serif;
 
-
-// Mixins (Reusable)
-@mixin border-radius($radius) {
-  border-radius: $radius;
+:root{
+    font-family: $font_family;
 }
+// Mixins (Reusable)
+
 @mixin btn_style($color,$background){
     width: fit-content;
     height: 44px;
-    border-radius: 32px;
+    font-size: 18px;
+    border-radius: 32px ;
     color: $color;
-    font-family: Manrope;
+    border: none;
     background: $background; 
     padding: 0rem 1rem 0rem 1rem; 
+
 }
 
 @mixin flex-center($direction,$justify,$gap) {
@@ -30,7 +38,7 @@ $border-n300: #CBD5E1;
   flex-direction: $direction ;
   gap: $gap;
 }
-@mixin font-style($font_family,$font_size,$font_weight,$line_height,$text_align,$color){
+@mixin font-style($font_size,$font_weight,$line_height,$text_align,$color){
     font-family:$font_family ;
     font-size: $font_size;
     font-weight: $font_weight;
@@ -42,20 +50,16 @@ $border-n300: #CBD5E1;
     max-width: $max-width;
     margin: $margin;
 }
+@mixin img-setting($max-width){
+    overflow: hidden;
+    max-width: $max-width;
+}
+
 img{
     max-width: 100%;
 }
-h4{
-    @include font-style(Manrope, 1.5rem, 500, 20px ,center,black);
-}
-h1{
-@extend .content2;
-    @include font-style(Manrope, 2rem, 600, 30px ,left,$primary-800);
-}
-h2{
-    @include font-style(Manrope, 1.7rem, 700, 27px ,left,$primary-800);
-}
-p{
+
+p,h1,h2,h3,h4{
     margin: 0px
 }
 .container{
@@ -78,7 +82,9 @@ p{
 .login{
     @include btn_style (white,black)
 }
-
+.img-setting{
+    @include img-setting(37.7)
+}
 .nav{
     @include flex-center(row,unset ,12px );
     align-items: center;
@@ -101,7 +107,9 @@ p{
     display: flex;
     padding: 72px 0px 0px 0px;
     background: var(--Accent-50, #EBFAE7); 
-
+img{
+    @include img-setting(728px)
+}
 }
 
 .heroSection > *{
@@ -115,22 +123,32 @@ p{
 }
 .heroSectionContentSearch{
     @include flex-center(row,space-between ,10px );
-    // flex: 1;
 }
-.content1{
-    font-family: Manrope;
-    color:$primary-800;
+.startHeading {
+    color:$primary-600;
     text-align: center;
-    padding: 8px 16px 8px 16px;
+    padding: 8px 16px;
     border-radius: 99px;
     width: fit-content;
     background: $primary-200;
 }
-.content2{
-    @include font-style(Manrope, 64px, 700,77px ,left , black);
+.mainHeading{
+    font-size: 34px;
+    color: black;
+}
+.detailedText{
+    font-size: 16px;
+    color: $text-grey1-n500;
+    text-align: left;
+}
+
+.detailedText2{
+    font-size: 16px;
+    color: $text-grey1-n600;
+    text-align: left;
 }
 .content3{
-    @include font-style(Manrope, 1rem, 400, 20px ,left ,$text-grey1-n500);
+    @include font-style( 1rem, 400, 20px ,left ,$text-grey1-n500);
 }
 .heroSectionContentSearch{
     display: flex;
@@ -142,12 +160,10 @@ p{
     input{
         @extend .heroSectionContentSearch;
         padding: 5px;
+        flex-basis: 75%;
     }
-    > *{
-        flex-shrink: 1;
-    }
-    > :last-child{
-        align-self: flex-end;
+    button{
+        flex-basis: 20%;
     }
 }
 .heroSearch{
@@ -168,6 +184,9 @@ p{
     > :last-child{
         text-align: left;
     }
+    img{
+        @include img-setting(516px)
+    }
 }
 .aboutSectionContent{
     @include flex-center(column,center ,20px )
@@ -179,20 +198,28 @@ p{
     background: $primary-50;
 }
 .workProcess{
-    // @include container(1440px,0rem);
     @include flex-center(column,center ,4rem );
     padding: 50px;
     align-items: center;
-    // background: var(--Primary-50, #EBFAE7);
     .processContent{
         @include flex-center(row,center ,4rem );
         padding: 56px 48px
     }
 }
 
-.process1{
-    @include flex-center(column,center ,0px );
-    align-items: center;
+.articalItem{
+    @include flex-center(column,flex-start ,26px );
+    img{
+        max-width: 80px;
+    }
+    h3{
+        font-size: 24px;
+        color:$text-grey1-n700;
+    }
+    p{
+        @extend .detailedText;
+        color: $text-grey1-n600;
+    }
 }
 
 //section 4
@@ -202,63 +229,91 @@ p{
 }
 .purchasing{
     @include flex-center(column,unset ,30px );
-    padding: 88px 80px;
+    padding: 88px 0px;
     align-items: center;
     .purchasingHead{
         @include flex-center(row,center ,30px );
     }
-
+    img{
+        @include img-setting(82px)
+    }
 }
+
 .panel{
     @include flex-center(row,space-between ,150px );
-    padding: 8px 80px;
     border-radius: 40px;
     .panel > * {
         flex: 1;
     }
 }
+.panelHeading{
+    @include flex-center(column,unset ,24px );
+    align-items: center;
+    > *{
+        text-align: center;
+        @extend .detailedText
+    }
 
+}
 .panelHead{
     padding: 20px;
     border-radius: 20px;
-    background: $primary-500;
-    @include font-style(Manrope,32px ,800 ,38px ,center ,white )
+    background: $primary-700;
+    text-align: center;
+    h3{
+        font-size: 32px;
+        color: white;
+    }
 
 }
-.panellist{
+.panelList{
     @include flex-center(column,center ,56px );
     background: white;
     align-items: center;
-    padding: 56px 48px;
+    padding: 48px 56px;
     border-radius: 40px;
 
 }
 
-.listItems {
-    @include flex-center(column,center , 0px);
+.panelListItems {
+    @include flex-center(column,center , 16px);
     align-items: center;
-    .listItems > *{
+    .panelListItems > *{
         flex: 1;
     }
     p{
-        text-align: center
+        text-align: center;
+        @extend .detailedText;
     }
 }
-
-.faqs{
+h4{
+    font-size: 22px;
+}
+.faqSection{
     @include flex-center(column,center ,2rem );
     @include container(1440px, 0px);
     padding: 88px 80px;
     align-items: center;
 }
-.questionlist{
+.questionList{
     @include flex-center(column,unset ,8px );
     padding: 0px 100px;
 }
+.questionListArticle{
+ display: flex;
+ gap: 8px;
+ flex-direction: column;
+ padding: 24px 32px 24px 32px;
+ background: $neutral-50;
+}
 .question{
-    padding: 24px 32px 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    
     border-radius: 12px;
-    background: $neutral-50
+    img{
+        max-width: 31px;
+    }
 }
 
 //section6
@@ -268,50 +323,65 @@ p{
 }
 .testinomialSection{
     @include flex-center(column,center ,2rem );
-    // @include container(1440px,0rem, );
-    padding: 88px 80px;
+    padding: 88px 0px;
     background: $primary-50;
     text-align: center;
     align-items: center;                                 
 }
 .user{
     @include flex-center(row,flex-start ,20px );
+    align-items: center;
 }
-.testinomiallist{
+.testinomialList{
     padding: 2rem;
     @include flex-center(row,unset ,50px );
 }
-.testinomiallist > * {
+.testinomialList > * {
     flex: 1;
 
 }
 .testinomial{
-    @include flex-center(column,space-between ,0px );
+    @include flex-center(column,unset ,16px );
     background: #FFFFFF;
+    text-align: left;
     padding: 24px;
     border-radius: 20px;
     border: 1px;
+    p{
+        @extend .detailedText;
+    }
+    h4{
+        font-size: 20px;
+    }
 }
 
 //section 7
 
-.testinomialSection_2{
-    // @include container(2rem 4rem 2rem 4rem);
+.testinomialSection2{
     @include flex-center(column,center ,0px );
     background: white;
     padding: 88px 80px;
     align-items: center;
 }
-.testinomial2box{
+.testinomial2Box{
     @include flex-center(row,unset ,50px );
     background: $primary-500;
     border-radius: 20px;
+    img{
+        @include img-setting(463px)
+    }
 }
-.testinomiallistContent{
-    @include flex-center(column,center ,0px );
+.testinomialListContent{
+    @include flex-center(column,center ,20px );
     padding-left:30px ;
     color: $primary-800;
     width: 55%;
+    h2{
+        font-size: 40px;
+    }
+}
+.testinomialListContentBtn{
+    @include btn_style(white,black )
 }
 .image{
     width: 45%;
@@ -347,7 +417,7 @@ p{
 }
 @media (max-width: 768px) {
     .content2{
-        @include font-style(Manrope, 44px, 400,47px ,left , black);
+        @include font-style( 44px, 400,47px ,left , black);
     }
     .panel{
         @include flex-center(column,center ,10px )
