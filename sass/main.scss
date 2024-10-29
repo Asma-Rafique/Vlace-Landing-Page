@@ -406,11 +406,11 @@ h4{
 }
 .testinomialListContent{
     @include flex-center(column,center ,20px );
-    padding-left:64px ;
+    padding-left: 64px ;
     color: $primary-800;
     h2{
         // font-size: 40px;
-        font-size: clamp(32px, 2vw + 1rem, 40px);
+        font-size: clamp(28px, 1vw, 40px);
     }
 }
 .testinomialListContentBtn{
@@ -506,10 +506,22 @@ h4{
     gap: 1rem;
 }
 }
-@media (max-width: 1000px){
+@media (max-width: 1030px){
 .panel{
     flex-direction: column;
     gap: 50px;
+}
+.testinomialSection2{
+    .testinomial2Box{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .testinomialListContent{
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-top: 30px;
+    }
 }
 }
     
@@ -548,13 +560,27 @@ h4{
         .testinomialListContent{
             justify-content: center;
             align-items: center;
-            padding-top: 60px;
-            padding-left: 60px;
+            padding-left: 0;
         }
         .image{
             border-top-right-radius: 0px;
             border-bottom-left-radius:20px ;
             border-bottom-right-radius:20px ;
+        }
+        .image {
+            max-width: 463px;
+            width: 100%;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius:20px ;
+            border-bottom-right-radius:20px ;
+    
+            /* Make image responsive */
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: inherit;
+                max-width: 100%; // Adjusts to container size
+            }
         }
     }
     .testinomialList{
