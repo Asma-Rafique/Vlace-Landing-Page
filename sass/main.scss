@@ -22,7 +22,8 @@ $font_family: "Manrope", sans-serif;
 @mixin btn_style($color,$background){
     width: fit-content;
     height: 44px;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: clamp(14px, 1.5vw, 18px);
     border-radius: 32px ;
     color: $color;
     border: none;
@@ -62,6 +63,24 @@ img{
 p,h1,h2,h3,h4{
     margin: 0px
 }
+// h1{
+//     font-size: clamp(1rem, 2vw + 1rem, 3.5rem);
+// }
+// h2{
+//     font-size: clamp(1rem, 2vw + 1rem, 3rem);
+// }
+// h3{
+//     font-size: clamp(0.75rem, 2vw + 1rem, 2.5rem);
+// }
+// p{
+//     font-size: clamp(0.5rem, 2vw + 1rem, 1rem);
+// }
+
+  
+p {
+    font-size: clamp(14px, 1.5vw, 16px); // Resizes from 14px to 16px
+}
+
 .container{
     max-width: 1440px;
     // margin: auto;
@@ -84,7 +103,7 @@ p,h1,h2,h3,h4{
 }
 .navLinks{
     @include flex-center(row,center,1.5rem ) ;
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
     a{ text-decoration:none;
         color: black;
     }
@@ -140,11 +159,20 @@ img{
     background: $primary-200;
 }
 .mainHeading{
-    font-size: 34px;
+    h1 {
+        font-size: clamp(28px, 2vw + 1rem, 36px); // Resizes from 28px to 34px
+    }
+    
+    h2 {
+        font-size: clamp(28px, 1vw + 1rem, 34px); // Resizes from 28px to 34px
+    }
     color: black;
 }
 .detailedText{
-    font-size: 16px;
+      
+    p {
+        font-size: clamp(14px, 1.5vw, 16px); // Resizes from 14px to 16px
+    }
     color: $text-grey1-n500;
     text-align: left;
 }
@@ -208,7 +236,8 @@ img{
         max-width: 80px;
     }
     h3{
-        font-size: 24px;
+        // font-size: 24px;
+        font-size: clamp(20px, 2vw, 24px);
         color:$text-grey1-n700;
     }
     p{
@@ -244,9 +273,6 @@ img{
         flex: 1;
     }
 }
-.mainHeading h2 ,h1 {
-    font-size: clamp(1.5rem, 2vw + 1rem, 3rem); // Adjust values to fit your layout
-}
 
 .panelHeading{
     @include flex-center(column,unset ,24px );
@@ -262,8 +288,9 @@ img{
     border-radius: 20px;
     background: $primary-700;
     text-align: center;
-    h3{
-        font-size: 32px;
+      
+    h3 {
+        font-size: clamp(28px, 2.2vw + 1rem, 32px); // Resizes from 14px to 16px
         color: white;
     }
 
@@ -289,7 +316,7 @@ img{
     }
 }
 h4{
-    font-size: 22px;
+    font-size: clamp(18px, 1.8vw, 22px);
 }
 .faqSection{
     @include flex-center(column,center ,3rem );
@@ -355,7 +382,8 @@ h4{
         @extend .detailedText;
     }
     h4{
-        font-size: 20px;
+        // font-size: 20px;
+        font-size: clamp(16px, 1.5vw, 20px); 
     }
 }
 
@@ -381,7 +409,8 @@ h4{
     padding-left:64px ;
     color: $primary-800;
     h2{
-        font-size: 40px;
+        // font-size: 40px;
+        font-size: clamp(32px, 2vw + 1rem, 40px);
     }
 }
 .testinomialListContentBtn{
@@ -405,7 +434,7 @@ h4{
         max-width: 24px;
     }
     h4{
-        font-size: 24px;
+        font-size: clamp(18px, 1.8vw, 24px);
     }
 }
 .footerContent{
@@ -445,9 +474,6 @@ h4{
     color: black;
 }
 @media (max-width: 768px) {
-    .content2{
-        @include font-style( 44px, 400,47px ,left , black);
-    }
     .panel{
         @include flex-center(column,center ,10px )
     }
@@ -478,5 +504,71 @@ h4{
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
+}
+}
+@media (max-width: 1000px){
+.panel{
+    flex-direction: column;
+    gap: 50px;
+}
+}
+    
+
+@media (max-width: 850px) {
+    .navLinks{
+        gap: 12px;
+    }
+    .heroSection{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        .heroSectionContent{
+            align-items: center;
+            padding-top: 30px;
+            .heroSectionContentLine{
+                align-items: center;
+            }
+        }
+    }
+    .aboutSection{
+        flex-direction: column;
+        align-items: center;
+    }
+    .workProcess .processContent{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 40px;
+    }
+    .testinomialSection2{
+        .testinomial2Box{
+            flex-direction: column;
+            gap: 20px;
+        }
+        .testinomialListContent{
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px;
+            padding-left: 60px;
+        }
+        .image{
+            border-top-right-radius: 0px;
+            border-bottom-left-radius:20px ;
+            border-bottom-right-radius:20px ;
+        }
+    }
+    .testinomialList{
+        flex-direction: column;
+    }
+.footer{
+    .footerContent{
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 30px;
+    }
+    .col2{
+        align-items: center;
+    
+    }
 }
 }

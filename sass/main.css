@@ -10,6 +10,10 @@ p, h1, h2, h3, h4 {
   margin: 0px;
 }
 
+p {
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+
 .container {
   max-width: 1440px;
   padding: 0px 80px 0px 80px;
@@ -41,7 +45,7 @@ p, h1, h2, h3, h4 {
   justify-content: center;
   flex-direction: row;
   gap: 1.5rem;
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   padding: 1rem;
   align-items: center;
 }
@@ -54,7 +58,7 @@ p, h1, h2, h3, h4 {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   border-radius: 32px;
   color: white;
   border: none;
@@ -126,14 +130,21 @@ p, h1, h2, h3, h4 {
 }
 
 .mainHeading {
-  font-size: 34px;
   color: black;
+}
+.mainHeading h1 {
+  font-size: clamp(28px, 2vw + 1rem, 36px);
+}
+.mainHeading h2 {
+  font-size: clamp(28px, 1vw + 1rem, 34px);
 }
 
 .detailedText, .testinomial p, .panelListItems p, .panelHeading > *, .articalItem p {
-  font-size: 16px;
   color: #64748B;
   text-align: left;
+}
+.detailedText p, .testinomial p p, .panelListItems p p, .panelHeading > * p, .articalItem p p {
+  font-size: clamp(14px, 1.5vw, 16px);
 }
 
 .heroSectionContentSearch, .heroSectionContentSearch input {
@@ -156,7 +167,7 @@ p, h1, h2, h3, h4 {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   border-radius: 32px;
   color: black;
   border: none;
@@ -222,7 +233,7 @@ p, h1, h2, h3, h4 {
   max-width: 80px;
 }
 .articalItem h3 {
-  font-size: 24px;
+  font-size: clamp(20px, 2vw, 24px);
   color: #020617;
 }
 .articalItem p {
@@ -268,10 +279,6 @@ p, h1, h2, h3, h4 {
   flex: 1;
 }
 
-.mainHeading h2, h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
-}
-
 .panelHeading {
   display: flex;
   flex-shrink: 1;
@@ -291,7 +298,7 @@ p, h1, h2, h3, h4 {
   text-align: center;
 }
 .panelHead h3 {
-  font-size: 32px;
+  font-size: clamp(28px, 2.2vw + 1rem, 32px);
   color: white;
 }
 
@@ -323,7 +330,7 @@ p, h1, h2, h3, h4 {
 }
 
 h4 {
-  font-size: 22px;
+  font-size: clamp(18px, 1.8vw, 22px);
 }
 
 .faqSection {
@@ -416,7 +423,7 @@ h4 {
   border: 1px;
 }
 .testinomial h4 {
-  font-size: 20px;
+  font-size: clamp(16px, 1.5vw, 20px);
 }
 
 .testinomialSection2 {
@@ -453,14 +460,14 @@ h4 {
   color: #2C4C25;
 }
 .testinomialListContent h2 {
-  font-size: 40px;
+  font-size: clamp(32px, 2vw + 1rem, 40px);
 }
 
 .testinomialListContentBtn {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   border-radius: 32px;
   color: white;
   border: none;
@@ -489,7 +496,7 @@ h4 {
   max-width: 24px;
 }
 .footer h4 {
-  font-size: 24px;
+  font-size: clamp(18px, 1.8vw, 24px);
 }
 
 .footerContent {
@@ -546,14 +553,6 @@ h4 {
 }
 
 @media (max-width: 768px) {
-  .content2 {
-    font-family: "Manrope", sans-serif;
-    font-size: 44px;
-    font-weight: 400;
-    line-height: 47px;
-    text-align: left;
-    color: black;
-  }
   .panel {
     display: flex;
     flex-shrink: 1;
@@ -585,5 +584,64 @@ h4 {
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .panel {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+@media (max-width: 850px) {
+  .navLinks {
+    gap: 12px;
+  }
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroSection .heroSectionContent {
+    align-items: center;
+    padding-top: 30px;
+  }
+  .heroSection .heroSectionContent .heroSectionContentLine {
+    align-items: center;
+  }
+  .aboutSection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .workProcess .processContent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 40px;
+  }
+  .testinomialSection2 .testinomial2Box {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .testinomialSection2 .testinomialListContent {
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 60px;
+  }
+  .testinomialSection2 .image {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .testinomialList {
+    flex-direction: column;
+  }
+  .footer .footerContent {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+  }
+  .footer .col2 {
+    align-items: center;
   }
 }/*# sourceMappingURL=main.css.map */
