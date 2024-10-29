@@ -83,7 +83,7 @@ p {
 
 .container{
     max-width: 1440px;
-    // margin: auto;
+    margin: auto;
     padding: 0px 80px 0px 80px;
 }
 .navPosition{
@@ -474,13 +474,13 @@ h4{
     color: black;
 }
 @media (max-width: 768px) {
-    .panel{
-        @include flex-center(column,center ,10px )
-    }
-    .heroSectionContent {
-        flex-direction: column;
-        text-align: center;
-    }
+    // .panel{
+    //     @include flex-center(column,center ,10px )
+    // }
+    // .heroSectionContent {
+    //     flex-direction: column;
+    //     text-align: center;
+    // }
     
 
     .navLinks {

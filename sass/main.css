@@ -16,6 +16,7 @@ p {
 
 .container {
   max-width: 1440px;
+  margin: auto;
   padding: 0px 80px 0px 80px;
 }
 
@@ -553,17 +554,6 @@ h4 {
 }
 
 @media (max-width: 768px) {
-  .panel {
-    display: flex;
-    flex-shrink: 1;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .heroSectionContent {
-    flex-direction: column;
-    text-align: center;
-  }
   .navLinks {
     flex-direction: column;
     text-align: center;
